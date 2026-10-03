@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TpT Niche Research Pro – Keyword & Competitor Research for TpT Sellers</title>
+<meta name="description" content="TpT Niche Research Pro: keyword search with competition levels, deep A–Z search, multi-page product scraper with CSV export, and inline badges on TeachersPayTeachers results.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#14213d;--muted:#5b6478;--bg:#fbf8f3;--card:#fff;--line:#e8e2d6;--teal:#0f9d8a;--teal-d:#0b7a6b;--coral:#ff6b4a;--sun:#ffc94d;--radius:20px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+  header{position:sticky;top:0;z-index:20;background:rgba(251,248,243,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;display:flex;align-items:center;gap:8px}
+  .logo span{background:var(--teal);color:#fff;border-radius:10px;padding:2px 8px;font-size:1rem}
+  nav ul{display:flex;gap:26px;list-style:none;align-items:center}
+  nav ul a{font-weight:500;color:var(--muted)}
+  nav ul a:hover{color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;font-size:.98rem;border:2px solid transparent;transition:.18s;cursor:pointer}
+  .btn-primary{background:var(--teal);color:#fff}
+  .btn-primary:hover{background:var(--teal-d);transform:translateY(-2px)}
+  .btn-sun{background:var(--sun);color:var(--ink)}
+  .btn-sun:hover{background:#ffd66e;transform:translateY(-2px)}
+  .btn-ghost{border-color:var(--ink);color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:#fff}
+  .btn-sm{padding:9px 18px;font-size:.9rem}
+  .hero{padding:60px 0 30px;text-align:center}
+  .tag{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:14px;background:#fff0c2;color:#8a6200}
+  h1{font-family:'Fraunces',serif;font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.1;margin-bottom:16px}
+  h1 em{font-style:normal;color:var(--teal)}
+  .hero p{max-width:640px;margin:0 auto 24px;color:var(--muted);font-size:1.1rem}
+  .btn-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+  h2{font-family:'Fraunces',serif;font-size:clamp(1.6rem,3.2vw,2.2rem);line-height:1.15;margin-bottom:10px}
+  h3{font-family:'Fraunces',serif;font-size:1.25rem;margin-bottom:6px}
+  section{padding:40px 0}
+  .sub{color:var(--muted);margin-bottom:24px;max-width:680px}
+  .toc{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:26px 0 0}
+  .toc a{padding:7px 14px;border:1px solid var(--line);background:#fff;border-radius:999px;font-size:.9rem;font-weight:500;color:var(--muted)}
+  .toc a:hover{color:var(--ink);border-color:var(--ink)}
+
+  .grid4{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+  .card .ico{font-size:2rem;margin-bottom:8px}
+  .card p{color:var(--muted)}
+
+  .tool{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:36px;margin-bottom:26px}
+  .steps{counter-reset:s;list-style:none;display:grid;gap:14px;margin:18px 0}
+  .steps li{counter-increment:s;padding-left:46px;position:relative}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;font-weight:600;display:grid;place-items:center}
+  .steps b{display:block}
+  .steps span{color:var(--muted);font-size:.96rem}
+  figure{margin:20px 0 0;text-align:center}
+  figure img{max-width:100%;width:340px;border-radius:14px;border:1px solid var(--line);box-shadow:0 14px 34px -18px rgba(20,33,61,.4)}
+  figure .grid{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  figure .grid img{width:300px}
+  figcaption{font-size:.85rem;color:var(--muted);margin-top:8px}
+  .note{background:#fff7dd;border:1px solid #f1deaa;border-radius:14px;padding:14px 18px;margin-top:16px;font-size:.95rem}
+
+  details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:10px}
+  summary{font-weight:600;cursor:pointer}
+  details p{color:var(--muted);margin-top:8px}
+
+  .cta{background:var(--ink);color:#fff;border-radius:28px;padding:44px;text-align:center}
+  .cta p{color:#c9d0e0;margin:8px 0 22px}
+  footer{margin-top:50px;border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.9rem}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  @media(max-width:760px){.grid4{grid-template-columns:1fr}.tool{padding:22px}nav ul li:not(:last-child){display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="index.html"><span>TpT</span> Pro Tools</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="btn btn-sun btn-sm" href="https://buy.polar.sh/polar_cl_UAXHR11qjlCEsdUZf7W7fAFBD4QvfcWa7340l36kNuJ" target="_blank" rel="noopener">Buy now</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <span class="tag">Pro extension</span>
+    <h1>TpT Niche Research <em>Pro</em></h1>
+    <p>Keyword and competitor research that works right on TeachersPayTeachers. See how many results and how much competition any keyword has, then find the niches worth your time.</p>
+    <div class="btn-row">
+      <a class="btn btn-sun" href="https://buy.polar.sh/polar_cl_UAXHR11qjlCEsdUZf7W7fAFBD4QvfcWa7340l36kNuJ" target="_blank" rel="noopener">Buy now</a>
+      <a class="btn btn-ghost" href="#features">See what's inside</a>
+    </div>
+    <div class="toc">
+      <a href="#features">Features</a>
+      <a href="#keywords">Keyword Search</a>
+      <a href="#deep">Deep Search</a>
+      <a href="#scraper">Multi-Page Scraper</a>
+      <a href="#badges">Inline badges</a>
+      <a href="#start">Get started</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section id="features">
+    <h2>Four tools in one panel</h2>
+    <p class="sub">A small panel appears on TeachersPayTeachers with three tabs: KW Search, Deep Search KW and Multi-Page CSV. A fourth tool adds badges right on the search results.</p>
+    <div class="grid4">
+      <div class="card"><div class="ico">🔍</div><h3>Keyword Search</h3><p>Type a keyword and see suggestions, results counts and a High / Med / Low competition label for each.</p></div>
+      <div class="card"><div class="ico">🔎</div><h3>Deep Search</h3><p>A deeper sweep that finds many more keyword ideas, then fetches the result count for each one.</p></div>
+      <div class="card"><div class="ico">📥</div><h3>Multi-Page Scraper</h3><p>Scan several pages of results, sort products by views, and download everything as a CSV.</p></div>
+      <div class="card"><div class="ico">🏷️</div><h3>Inline badges</h3><p>See the publish date and view count right on TpT search result cards, without opening each product.</p></div>
+    </div>
+  </section>
+
+  <!-- KEYWORD SEARCH -->
+  <section id="keywords">
+    <div class="tool">
+      <span class="tag">Tool 1</span>
+      <h2>🔍 Keyword Search</h2>
+      <p class="sub">Find out how crowded a keyword is before you create a product for it.</p>
+      <ol class="steps">
+        <li><b>Open the "KW Search" tab</b><span>Type a keyword (for example "fall") and press Run.</span></li>
+        <li><b>Read the results</b><span>You get the keyword, its suggestions and sub-suggestions, each with a results count and a competition label: High, Med or Low.</span></li>
+        <li><b>Spot the gaps</b><span>Keywords with a Low or Med label and a decent number of results are good candidates for a new product.</span></li>
+        <li><b>Export what you need</b><span>Use Export CSV, Copy All or Copy Keywords at the bottom of the panel.</span></li>
+      </ol>
+      <figure>
+        <img src="images/paid-keywords.png" alt="Keyword Search showing suggestions with results counts and competition labels" onerror="this.style.display='none'">
+        <figcaption>Keyword Search: results counts and High / Med / Low competition.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- DEEP SEARCH -->
+  <section id="deep">
+    <div class="tool">
+      <span class="tag">Tool 2</span>
+      <h2>🔎 Deep Search KW</h2>
+      <p class="sub">Go beyond the obvious keywords and discover long-tail ideas.</p>
+      <ol class="steps">
+        <li><b>Open the "Deep Search KW" tab</b><span>Type your main keyword and press Analyze.</span></li>
+        <li><b>Wait for the two phases</b><span>The tool first collects keyword ideas, then fetches the result count for each one. A progress bar shows how far it is, and you can press Stop at any time.</span></li>
+        <li><b>Review the full list</b><span>Every keyword comes with its results count and competition label, so you can sort out the best opportunities quickly.</span></li>
+        <li><b>Download the report</b><span>Press "Download CSV Report" to keep the whole list.</span></li>
+      </ol>
+      <figure>
+        <div class="grid">
+          <img src="images/paid-deep-search.png" alt="Deep Search fetching result counts for many keywords" onerror="this.style.display='none'">
+          <img src="images/paid-csv.png" alt="Deep Search results with Download CSV Report button" onerror="this.style.display='none'">
+        </div>
+        <figcaption>Deep Search: a long list of keywords with counts, ready to download.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- SCRAPER -->
+  <section id="scraper">
+    <div class="tool">
+      <span class="tag">Tool 3</span>
+      <h2>📥 Multi-Page Scraper</h2>
+      <p class="sub">Study what's already on page 1, 2, 3… of a TpT search, and see which products get the most views.</p>
+      <ol class="steps">
+        <li><b>Search on TpT</b><span>Run any search on TeachersPayTeachers as usual.</span></li>
+        <li><b>Open the "Multi-Page CSV" tab</b><span>Choose how many pages to scan, and a minimum number of views if you want to filter.</span></li>
+        <li><b>Press "Start Scraping"</b><span>The tool collects the products and shows the top results ranked by views, with their publish date.</span></li>
+        <li><b>Download the CSV</b><span>Press "Download CSV" to analyze competitors in a spreadsheet.</span></li>
+      </ol>
+      <figure>
+        <div class="grid">
+          <img src="images/paid-scraper.png" alt="Multi-Page Scraper settings and top results by views" onerror="this.style.display='none'">
+        </div>
+        <figcaption>Multi-Page Scraper: top products by views, exported to CSV.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- BADGES -->
+  <section id="badges">
+    <div class="tool">
+      <span class="tag">Tool 4</span>
+      <h2>🏷️ Inline badges on TpT results</h2>
+      <p class="sub">While you browse TpT search results, small badges appear under each product title.</p>
+      <ol class="steps">
+        <li><b>Search on TpT as usual</b><span>No need to open the panel.</span></li>
+        <li><b>Read the badges</b><span>Under each product title you see its publish date and view count, so you can tell at a glance what is new, old, popular or quiet.</span></li>
+      </ol>
+      <figure>
+        <img src="images/paid-badges.png" alt="TpT search results with publish date and views badges under each product" onerror="this.style.display='none'" style="width:560px">
+        <figcaption>Publish date and view badges (highlighted in yellow here) shown on TpT search results.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- GET STARTED -->
+  <section id="start">
+    <div class="tool">
+      <span class="tag">Get started</span>
+      <h2>Buy and set up</h2>
+      <ol class="steps">
+        <li><b>Buy it</b><span>Click "Buy now". After payment you receive your license key by email.</span></li>
+        <li><b>Install the free Tampermonkey extension</b><span>It runs the tool in your browser. Then add the TpT Niche Research Pro script to it.</span></li>
+        <li><b>Activate</b><span>Open TeachersPayTeachers and enter your license key when asked. The tool activates automatically.</span></li>
+        <li><b>Start researching</b><span>Use the panel on TpT: KW Search, Deep Search KW and Multi-Page CSV.</span></li>
+      </ol>
+      <div class="note">Works in Chrome, Firefox, Edge and Brave, on Windows and Mac.</div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2>Questions</h2>
+    <p class="sub">Quick answers before you buy.</p>
+    <details open>
+      <summary>Do I need technical skills?</summary>
+      <p>No. If you can install a browser extension, you can use it. The setup only takes a couple of minutes.</p>
+    </details>
+    <details>
+      <summary>Do I need to log in to use it?</summary>
+      <p>No login is needed to use the research panel.</p>
+    </details>
+    <details>
+      <summary>Is there a free version?</summary>
+      <p>Yes. The free TPT Seller Toolkit helps you track your sales and plan your Throw a Sale sales. <a href="extension.html" style="color:var(--teal-d);font-weight:600">See the free extension</a>.</p>
+    </details>
+    <details>
+      <summary>What if I need help?</summary>
+      <p>Reply to your purchase email and I'll help you get set up.</p>
+    </details>
+    <details>
+      <summary>Is it connected to TeachersPayTeachers?</summary>
+      <p>No. TpT Niche Research Pro is an independent tool and is not affiliated with or endorsed by TeachersPayTeachers.</p>
+    </details>
+  </section>
+
+  <div class="cta">
+    <h2>Ready to find your next niche?</h2>
+    <p>Get TpT Niche Research Pro and start researching in minutes.</p>
+    <a class="btn btn-sun" href="https://buy.polar.sh/polar_cl_UAXHR11qjlCEsdUZf7W7fAFBD4QvfcWa7340l36kNuJ" target="_blank" rel="noopener">Buy now</a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 TpT Pro Tools. Not affiliated with TeachersPayTeachers.</span>
+    <span><a href="index.html">Home</a> · <a href="blog.html">Blog</a> · <a href="about.html">About</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
