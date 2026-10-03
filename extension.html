@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TPT Seller Toolkit – Free Chrome Extension for TpT Sellers</title>
+<meta name="description" content="TPT Seller Toolkit: get notified of every TpT sale, see your daily/weekly/monthly earnings, and plan 2 months of Throw a Sale sales in a few clicks.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#14213d;--muted:#5b6478;--bg:#fbf8f3;--card:#fff;--line:#e8e2d6;--teal:#0f9d8a;--teal-d:#0b7a6b;--coral:#ff6b4a;--sun:#ffc94d;--radius:20px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+  header{position:sticky;top:0;z-index:20;background:rgba(251,248,243,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;display:flex;align-items:center;gap:8px}
+  .logo span{background:var(--teal);color:#fff;border-radius:10px;padding:2px 8px;font-size:1rem}
+  nav ul{display:flex;gap:26px;list-style:none;align-items:center}
+  nav ul a{font-weight:500;color:var(--muted)}
+  nav ul a:hover{color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;font-size:.98rem;border:2px solid transparent;transition:.18s;cursor:pointer}
+  .btn-primary{background:var(--teal);color:#fff}
+  .btn-primary:hover{background:var(--teal-d);transform:translateY(-2px)}
+  .btn-ghost{border-color:var(--ink);color:var(--ink)}
+  .btn-ghost:hover{background:var(--ink);color:#fff}
+  .btn-sm{padding:9px 18px;font-size:.9rem}
+  .hero{padding:60px 0 30px;text-align:center}
+  .tag{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:14px;background:#d9f3ee;color:var(--teal-d)}
+  h1{font-family:'Fraunces',serif;font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.1;margin-bottom:16px}
+  h1 em{font-style:normal;color:var(--teal)}
+  .hero p{max-width:640px;margin:0 auto 24px;color:var(--muted);font-size:1.1rem}
+  .btn-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+  h2{font-family:'Fraunces',serif;font-size:clamp(1.6rem,3.2vw,2.2rem);line-height:1.15;margin-bottom:10px}
+  h3{font-family:'Fraunces',serif;font-size:1.25rem;margin-bottom:6px}
+  section{padding:40px 0}
+  .sub{color:var(--muted);margin-bottom:24px;max-width:680px}
+  .toc{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:26px 0 0}
+  .toc a{padding:7px 14px;border:1px solid var(--line);background:#fff;border-radius:999px;font-size:.9rem;font-weight:500;color:var(--muted)}
+  .toc a:hover{color:var(--ink);border-color:var(--ink)}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+  .card .ico{font-size:2rem;margin-bottom:8px}
+  .card p{color:var(--muted);margin-bottom:12px}
+  .checks{list-style:none;display:grid;gap:7px}
+  .checks li{padding-left:26px;position:relative;font-size:.96rem}
+  .checks li::before{content:"✓";position:absolute;left:0;top:3px;width:18px;height:18px;border-radius:50%;background:var(--teal);color:#fff;font-size:.7rem;display:grid;place-items:center}
+
+  .tool{background:var(--card);border:1px solid var(--line);border-radius:28px;padding:36px;margin-bottom:26px}
+  .steps{counter-reset:s;list-style:none;display:grid;gap:14px;margin:18px 0}
+  .steps li{counter-increment:s;padding-left:46px;position:relative}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:0;width:32px;height:32px;border-radius:50%;background:var(--ink);color:#fff;font-weight:600;display:grid;place-items:center}
+  .steps b{display:block}
+  .steps span{color:var(--muted);font-size:.96rem}
+  figure{margin:20px 0 0;text-align:center}
+  figure img{max-width:100%;width:380px;border-radius:14px;border:1px solid var(--line);box-shadow:0 14px 34px -18px rgba(20,33,61,.4)}
+  figure .grid{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  figure .grid img{width:300px}
+  figcaption{font-size:.85rem;color:var(--muted);margin-top:8px}
+  .note{background:#fff7dd;border:1px solid #f1deaa;border-radius:14px;padding:14px 18px;margin-top:16px;font-size:.95rem}
+  .tip{background:#e7f6f3;border:1px solid #bfe6df;border-radius:14px;padding:14px 18px;margin-top:16px;font-size:.95rem}
+
+  details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:10px}
+  summary{font-weight:600;cursor:pointer}
+  details p{color:var(--muted);margin-top:8px}
+
+  .cta{background:var(--ink);color:#fff;border-radius:28px;padding:44px;text-align:center}
+  .cta p{color:#c9d0e0;margin:8px 0 22px}
+  footer{margin-top:50px;border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.9rem}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  @media(max-width:760px){.two{grid-template-columns:1fr}.tool{padding:22px}nav ul li:not(:last-child){display:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="index.html"><span>TpT</span> Pro Tools</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="btn btn-primary btn-sm" href="#install">Install free</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <span class="tag">Free Chrome extension</span>
+    <h1>TPT Seller <em>Toolkit</em></h1>
+    <p>Two tools in one extension: celebrate every sale the moment it happens, and plan your next 2 months of Throw a Sale sales in a few clicks.</p>
+    <div class="btn-row">
+      <!-- TODO: replace # with your Chrome Web Store link -->
+      <a class="btn btn-primary" href="#" target="_blank" rel="noopener">⬇ Install from Chrome Store</a>
+      <a class="btn btn-ghost" href="#how">See how it works</a>
+    </div>
+    <div class="toc">
+      <a href="#what">What it does</a>
+      <a href="#sales">My sales</a>
+      <a href="#plan">Plan sales</a>
+      <a href="#update">Add new products</a>
+      <a href="#faq">FAQ</a>
+    </div>
+  </div>
+
+  <!-- WHAT IT DOES -->
+  <section id="what">
+    <h2>Two jobs, one extension</h2>
+    <p class="sub">Built by a TpT seller for TpT sellers. Both tools live in the same popup, in separate tabs.</p>
+    <div class="two">
+      <div class="card">
+        <div class="ico">🎉</div>
+        <h3>My sales</h3>
+        <p>Know about a sale the moment it happens, and see what you've earned without opening the Sales Reports page.</p>
+        <ul class="checks">
+          <li>Desktop notification and sound for each sale</li>
+          <li>Earnings for the day, week and month</li>
+          <li>Choose which day your week starts</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="ico">📅</div>
+        <h3>Plan sales</h3>
+        <p>Create a whole series of back-to-back Throw a Sale sales. You choose the discounts; the extension does the typing and clicking.</p>
+        <ul class="checks">
+          <li>Plans the next 2 months of sales</li>
+          <li>Pick a discount for each sale</li>
+          <li>Adds new products to existing sales</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div id="how"></div>
+
+  <!-- INSTALL -->
+  <section id="install">
+    <div class="tool">
+      <span class="tag">Step 1</span>
+      <h2>Install and set up</h2>
+      <ol class="steps">
+        <li><b>Install the extension</b><span>Click "Install from Chrome Store" and then "Add to Chrome".</span></li>
+        <li><b>Pin it to your toolbar</b><span>Click the puzzle-piece icon in Chrome, then the pin next to TPT Seller Toolkit so it is always one click away.</span></li>
+        <li><b>Log in to TeachersPayTeachers</b><span>Stay logged in to your seller account in Chrome. The extension works with your open TpT session.</span></li>
+        <li><b>Open the popup</b><span>Click the extension icon. You'll see three tabs: My sales, Plan sales and Other tools.</span></li>
+      </ol>
+      <div class="note">The extension only works on <b>teacherspayteachers.com</b>, which is the only site permission it asks for.</div>
+    </div>
+  </section>
+
+  <!-- MY SALES -->
+  <section id="sales">
+    <div class="tool">
+      <span class="tag">Tool 1</span>
+      <h2>🎉 My sales: celebrate every sale</h2>
+      <p class="sub">See your earnings at a glance and get notified the moment a sale comes in.</p>
+      <ol class="steps">
+        <li><b>Open the "My sales" tab</b><span>You'll see your earnings for the Day, Week and Month, with the number of sales for each.</span></li>
+        <li><b>Turn on notifications</b><span>Tick "Desktop notifications" to get a pop-up for every new sale, and "Sound" if you want to hear it too.</span></li>
+        <li><b>Choose when your week starts</b><span>Use the "Week starts" menu so the weekly total matches the way you track your business.</span></li>
+        <li><b>Refresh or open your reports</b><span>Press the ↻ button to update the numbers, or "My Sales" to jump to your TpT sales page.</span></li>
+      </ol>
+      <figure>
+        <img src="images/my-sales.png" alt="My sales tab showing day, week and month earnings" onerror="this.style.display='none'">
+        <figcaption>The "My sales" tab: day, week and month earnings at a glance.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- PLAN SALES -->
+  <section id="plan">
+    <div class="tool">
+      <span class="tag">Tool 2</span>
+      <h2>📅 Plan sales: schedule 2 months in a few clicks</h2>
+      <p class="sub">Throw a Sale on TpT means filling the same form again and again. Let the extension do it for you.</p>
+      <ol class="steps">
+        <li><b>Open the "Plan sales" tab</b><span>The extension reads your Throw a Sale page and shows your <b>last sale</b> and the <b>next</b> date available, so new sales start right after your current ones.</span></li>
+        <li><b>Review the planned sales</b><span>A list of back-to-back sales for the next 2 months is prepared for you, each with its dates and name.</span></li>
+        <li><b>Pick the discounts</b><span>Choose a discount for every sale, or use <b>"Set all to"</b> and press <b>Apply</b> to give them all the same one.</span></li>
+        <li><b>Press "Create sales"</b><span>The button shows how many sales will be created. Keep the TpT tab open while the extension fills in the name, description, dates and discount for each sale and schedules it.</span></li>
+        <li><b>Watch the progress</b><span>A small banner at the bottom of the TpT page shows which sale is being created. You can press <b>Stop</b> at any time.</span></li>
+      </ol>
+      <figure>
+        <div class="grid">
+          <img src="images/plan-pick-discount.png" alt="Plan sales tab asking to pick a discount" onerror="this.style.display='none'">
+          <img src="images/plan-ready.png" alt="Plan sales tab with 16 sales ready to create" onerror="this.style.display='none'">
+        </div>
+        <figcaption>Pick a discount for each sale (or set all at once), then press "Create sales".</figcaption>
+      </figure>
+      <div class="tip"><b>Tip:</b> Open Settings in the Plan sales tab to choose whether the extension selects your entire store and schedules automatically, or fills the form and lets you finish it yourself.</div>
+    </div>
+  </section>
+
+  <!-- UPDATE EXISTING -->
+  <section id="update">
+    <div class="tool">
+      <span class="tag">Tool 2 · bonus</span>
+      <h2>🔄 Added new products? Update your existing sales</h2>
+      <p class="sub">New products are not added to sales you already scheduled. This feature fixes that.</p>
+      <ol class="steps">
+        <li><b>Open "Add all products to existing sales"</b><span>It's in the Plan sales tab. You'll see your active and upcoming sales with a checkbox each, the discount, and how many products they have right now.</span></li>
+        <li><b>Tick the sales to update</b><span>Use "Select all sales" or "None", or tick them one by one.</span></li>
+        <li><b>Press the button</b><span>Nothing opens on TpT until you press it. The extension then opens each selected sale, adds all your products, and saves it.</span></li>
+      </ol>
+      <figure>
+        <img src="images/update-existing.png" alt="Add all products to existing sales list" onerror="this.style.display='none'">
+        <figcaption>Tick the sales that should get your new products.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <h2>Questions</h2>
+    <p class="sub">Quick answers before you install.</p>
+    <details open>
+      <summary>Is it really free?</summary>
+      <p>Yes. TPT Seller Toolkit is free to install and use.</p>
+    </details>
+    <details>
+      <summary>Do I need to keep the TpT tab open while it creates sales?</summary>
+      <p>Yes. The extension works inside your TpT tab, so leave it open until the banner says all sales are created.</p>
+    </details>
+    <details>
+      <summary>What if something goes wrong?</summary>
+      <p>The banner on the TpT page tells you what happened. Press Stop to cancel, then check your Throw a Sale page and run the plan again. TpT can change its pages, so if something stops working, please contact me.</p>
+    </details>
+    <details>
+      <summary>Is it connected to TeachersPayTeachers?</summary>
+      <p>No. TPT Seller Toolkit is an independent tool and is not affiliated with or endorsed by TeachersPayTeachers.</p>
+    </details>
+    <details>
+      <summary>What is "Other tools"?</summary>
+      <p>That tab is where more tools will live as the toolkit grows. A more powerful paid version is also in the works.</p>
+    </details>
+  </section>
+
+  <div class="cta" id="get">
+    <h2>Ready to save time on TpT?</h2>
+    <p>Add the free extension to Chrome in one click.</p>
+    <!-- TODO: replace # with your Chrome Web Store link -->
+    <a class="btn btn-primary" href="#" target="_blank" rel="noopener">⬇ Install from Chrome Store</a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 TpT Pro Tools. Not affiliated with TeachersPayTeachers.</span>
+    <span><a href="index.html">Home</a> · <a href="blog.html">Blog</a> · <a href="about.html">About</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

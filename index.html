@@ -1,124 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TpT Pro Tools - Professional Tools for TeachersPayTeachers Sellers</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TpT Pro Tools – Free Tools & Tips for TeachersPayTeachers Sellers</title>
+<meta name="description" content="Free browser extension, pro tools and practical tips to help TeachersPayTeachers sellers find niches, analyze competitors and grow sales.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#14213d;
+    --muted:#5b6478;
+    --bg:#fbf8f3;
+    --card:#ffffff;
+    --line:#e8e2d6;
+    --teal:#0f9d8a;
+    --teal-d:#0b7a6b;
+    --coral:#ff6b4a;
+    --sun:#ffc94d;
+    --radius:20px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+  /* NAV */
+  header{position:sticky;top:0;z-index:20;background:rgba(251,248,243,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .logo{font-family:'Fraunces',serif;font-weight:700;font-size:1.25rem;display:flex;align-items:center;gap:8px}
+  .logo span{background:var(--teal);color:#fff;border-radius:10px;padding:2px 8px;font-size:1rem}
+  nav ul{display:flex;gap:26px;list-style:none;align-items:center}
+  nav ul a{font-weight:500;color:var(--muted)}
+  nav ul a:hover{color:var(--ink)}
+
+  /* BUTTONS */
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;font-size:.98rem;border:2px solid transparent;transition:.18s;cursor:pointer}
+  .btn-primary{background:var(--teal);color:#fff}
+  .btn-primary:hover{background:var(--teal-d);transform:translateY(-2px)}
+  .btn-ghost{border-color:var(--ink);color:var(--ink);background:transparent}
+  .btn-ghost:hover{background:var(--ink);color:#fff}
+  .btn-sm{padding:9px 18px;font-size:.9rem}
+
+  /* HERO */
+  .hero{padding:72px 0 40px;text-align:center}
+  .hero h1{font-family:'Fraunces',serif;font-size:clamp(2.2rem,5.5vw,3.8rem);line-height:1.1;max-width:780px;margin:0 auto 18px}
+  .hero h1 em{font-style:normal;color:var(--teal)}
+  .hero p{max-width:600px;margin:0 auto;color:var(--muted);font-size:1.12rem}
+
+  section.block{padding:44px 0}
+  .tag{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:14px}
+  .tag.free{background:#d9f3ee;color:var(--teal-d)}
+  .tag.soon{background:#fff0c2;color:#8a6200}
+  .tag.blog{background:#ffe1d9;color:#b53a1d}
+  h2{font-family:'Fraunces',serif;font-size:clamp(1.7rem,3.4vw,2.4rem);line-height:1.15;margin-bottom:12px}
+
+  /* FREE EXTENSION */
+  .feature{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:46px;box-shadow:0 20px 50px -30px rgba(20,33,61,.25)}
+  .feature p.lead{color:var(--muted);font-size:1.05rem;margin-bottom:20px}
+  .checks{list-style:none;margin-bottom:26px;display:grid;gap:8px}
+  .checks li{padding-left:28px;position:relative}
+  .checks li::before{content:"✓";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;background:var(--teal);color:#fff;font-size:.75rem;display:grid;place-items:center;margin-top:3px}
+  .btn-row{display:flex;gap:12px;flex-wrap:wrap}
+  .shot{aspect-ratio:4/3;border-radius:20px;background:linear-gradient(135deg,#d9f3ee,#fff0c2);border:1px solid var(--line);display:grid;place-items:center;overflow:hidden;position:relative}
+  .shot img{width:100%;height:100%;object-fit:cover}
+  .shot .ph{text-align:center;color:var(--teal-d);font-weight:600;padding:20px}
+  .shot .ph b{display:block;font-size:2.6rem}
+
+  /* PAID */
+  .paid{background:var(--ink);color:#fff;border-radius:28px;padding:50px;display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center;position:relative;overflow:hidden}
+  .paid::after{content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:50%;background:var(--sun);opacity:.15}
+  .paid p{color:#c9d0e0;margin-bottom:22px;max-width:520px}
+  .progress{background:rgba(255,255,255,.1);border-radius:999px;height:10px;overflow:hidden;margin-bottom:8px}
+  .progress i{display:block;height:100%;width:65%;background:linear-gradient(90deg,var(--sun),var(--coral));border-radius:999px}
+  .paid small{color:#aab3c8}
+  .paid .box{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:24px;position:relative;z-index:1}
+  .paid .box h3{font-size:1rem;margin-bottom:12px;color:var(--sun)}
+  .paid .box ul{list-style:none;display:grid;gap:8px;color:#e5e9f4}
+  .paid .box li::before{content:"★ ";color:var(--sun)}
+  .btn-sun{background:var(--sun);color:var(--ink)}
+  .btn-sun:hover{transform:translateY(-2px);background:#ffd66e}
+
+  /* BLOG */
+  .head-row{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+  .posts{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .post{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:.2s}
+  .post:hover{transform:translateY(-5px);box-shadow:0 18px 40px -22px rgba(20,33,61,.35)}
+  .post .thumb{height:150px;background:linear-gradient(135deg,var(--c1),var(--c2))}
+  .post .body{padding:22px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .post time{font-size:.8rem;color:var(--muted)}
+  .post h3{font-family:'Fraunces',serif;font-size:1.2rem;line-height:1.25}
+  .post p{color:var(--muted);font-size:.95rem;flex:1}
+  .post .more{font-weight:600;color:var(--teal-d)}
+
+  footer{margin-top:50px;border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.9rem}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+  @media(max-width:860px){
+    nav ul li:not(:last-child){display:none}
+    .feature,.paid{grid-template-columns:1fr;padding:28px}
+    .posts{grid-template-columns:1fr}
+    .hero{padding-top:48px}
+  }
+</style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">📊 TpT Pro Tools</div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="https://buy.polar.sh/polar_cl_xD7OwZfzeXDuRXfnZosmnhlgCHnWZipYI1uuI2XSmT1" class="btn-primary">Get Pro</a></li>
-            </ul>
-        </div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="index.html"><span>TpT</span> Pro Tools</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="btn btn-primary btn-sm" href="#free">Get the free tool</a></li>
+      </ul>
     </nav>
+  </div>
+</header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Professional Tools for TpT Sellers</h1>
-            <p>Find profitable niches, analyze competitors, and boost your TeachersPayTeachers sales with our professional browser tools.</p>
-            <div class="hero-buttons">
-                <a href="#free-extension" class="btn-primary">Try Free Extension</a>
-                <a href="products.html" class="btn-secondary">View Pro Version</a>
-            </div>
+<main class="wrap">
+
+  <div class="hero">
+    <h1>Free tools & smart tips for <em>TpT sellers</em></h1>
+    <p>Find profitable niches, study your competitors and grow your TeachersPayTeachers store with simple browser tools and practical guides.</p>
+  </div>
+
+  <!-- SECTION 1: FREE EXTENSION -->
+  <section class="block" id="free">
+    <div class="feature">
+      <div>
+        <span class="tag free">Free extension</span>
+        <h2>TPT Seller Toolkit</h2>
+        <p class="lead">Two tools in one free Chrome extension: celebrate every sale the moment it happens, and plan your next 2 months of Throw a Sale sales in a few clicks.</p>
+        <ul class="checks">
+          <li>Sale notifications, plus earnings for the day, week and month</li>
+          <li>Create back-to-back Throw a Sale sales: you pick the discounts, it does the clicking</li>
+          <li>Add new products to your existing sales in one go</li>
+        </ul>
+        <div class="btn-row">
+          <!-- TODO: replace # with your Chrome Web Store link -->
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">⬇ Install from Chrome Store</a>
+          <!-- TODO: create extension.html with description + how-to -->
+          <a class="btn btn-ghost" href="extension.html">More details</a>
         </div>
-    </section>
+      </div>
+      <div class="shot">
+        <img src="images/my-sales.png" alt="TPT Seller Toolkit popup showing day, week and month earnings" style="object-fit:contain;padding:18px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="ph" style="display:none"><b>🧩</b>Add images/my-sales.png</div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Free Extension Section -->
-    <section class="free-extension" id="free-extension">
-        <div class="container">
-            <div class="extension-badge">FREE</div>
-            <h2>TpT Keyword Finder</h2>
-            <p class="extension-subtitle">Instantly check keyword competition on TeachersPayTeachers</p>
-            
-            <div class="extension-features">
-                <div class="feature">
-                    <div class="feature-icon">🔍</div>
-                    <h3>Quick Search</h3>
-                    <p>Check any keyword's competition level in seconds</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon"></div>
-                    <h3>Result Counts</h3>
-                    <p>See exactly how many products exist for any search term</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">⚡</div>
-                    <h3>One-Click Install</h3>
-                    <p>Works instantly after installation, no setup required</p>
-                </div>
-            </div>
-
-            <div class="install-section">
-                <a href="https://chrome.google.com/webstore/detail/tpt-keyword-finder/YOUR_EXTENSION_ID" class="btn-install" target="_blank">
-                    <span class="install-icon">⬇️</span>
-                    Install Free Extension
-                </a>
-                <p class="install-note">Works with Chrome, Edge, and Brave browsers</p>
-            </div>
-
-            <!-- How It Works Section -->
-            <div class="how-it-works">
-                <h3>How It Works</h3>
-                <div class="steps">
-                    <div class="step">
-                        <div class="step-number">1</div>
-                        <h4>Install Extension</h4>
-                        <p>Click the install button above and add to Chrome</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">2</div>
-                        <h4>Go to TpT</h4>
-                        <p>Visit TeachersPayTeachers.com</p>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">3</div>
-                        <h4>Search Keywords</h4>
-                        <p>Use the floating panel to check any keyword</p>
-                    </div>
-                </div>
-                
-                <div class="tutorials-section">
-                    <h4>📹 Video Tutorials</h4>
-                    <p>Learn how to get the most out of TpT Keyword Finder</p>
-                    <div class="tutorial-links">
-                        <a href="#" class="tutorial-link">▶️ Getting Started Guide</a>
-                        <a href="#" class="tutorial-link">▶️ Finding Low Competition Niches</a>
-                        <a href="#" class="tutorial-link">▶️ Advanced Tips & Tricks</a>
-                    </div>
-                </div>
-            </div>
+  <!-- SECTION 2: PAID EXTENSION -->
+  <section class="block" id="pro">
+    <div class="paid">
+      <div style="position:relative;z-index:1">
+        <span class="tag soon">Coming soon</span>
+        <h2>TpT Pro – the premium extension</h2>
+        <p>I'm building a more powerful version with advanced research features for sellers who want to go further. It's in active development.</p>
+        <div class="progress"><i></i></div>
+        <small>In development – launching soon</small>
+        <div style="margin-top:22px">
+          <!-- TODO: link to a waitlist form / email -->
+          <a class="btn btn-sun" href="mailto:your@email.com?subject=TpT Pro waitlist">Join the waitlist</a>
         </div>
-    </section>
+      </div>
+      <div class="box">
+        <h3>What to expect</h3>
+        <ul>
+          <li>Everything in the free version</li>
+          <li>Deeper niche & keyword insights</li>
+          <li>Advanced competitor analysis</li>
+          <li>Early-bird price for first users</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <!-- Pro Version Teaser -->
-    <section class="pro-teaser">
-        <div class="container">
-            <h2>Need More Power?</h2>
-            <p>Upgrade to <strong>TpT Niche Research Pro</strong> for advanced features</p>
-            <div class="pro-features">
-                <div class="pro-feature">✓ Deep A-Z keyword sweep</div>
-                <div class="pro-feature">✓ Multi-page product scraper</div>
-                <div class="pro-feature">✓ CSV export functionality</div>
-                <div class="pro-feature">✓ Inline product badges</div>
-                <div class="pro-feature">✓ Filter by views & dates</div>
-            </div>
-            <a href="https://buy.polar.sh/polar_cl_xD7OwZfzeXDuRXfnZosmnhlgCHnWZipYI1uuI2XSmT1" class="btn-primary">Get Pro Version - $29</a>
-        </div>
-    </section>
+  <!-- SECTION 3: LATEST BLOG -->
+  <section class="block" id="blog">
+    <div class="head-row">
+      <div>
+        <span class="tag blog">From the blog</span>
+        <h2>Latest tips for sellers</h2>
+      </div>
+      <a class="btn btn-ghost btn-sm" href="blog.html">All articles →</a>
+    </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 TpT Pro Tools. Not affiliated with TeachersPayTeachers.</p>
+    <!-- TODO: replace with your real latest posts (title, date, summary, link) -->
+    <div class="posts">
+      <a class="post" href="blog.html">
+        <div class="thumb" style="--c1:#0f9d8a;--c2:#9be3d6"></div>
+        <div class="body">
+          <time>Oct 2026</time>
+          <h3>Your latest blog post title</h3>
+          <p>A short summary of your newest article goes here in one or two lines.</p>
+          <span class="more">Read more →</span>
         </div>
-    </footer>
+      </a>
+      <a class="post" href="blog.html">
+        <div class="thumb" style="--c1:#ff6b4a;--c2:#ffc94d"></div>
+        <div class="body">
+          <time>Sep 2026</time>
+          <h3>Previous blog post title</h3>
+          <p>A short summary of your previous article goes here in one or two lines.</p>
+          <span class="more">Read more →</span>
+        </div>
+      </a>
+      <a class="post" href="blog.html">
+        <div class="thumb" style="--c1:#14213d;--c2:#5b6fa8"></div>
+        <div class="body">
+          <time>Sep 2026</time>
+          <h3>Another blog post title</h3>
+          <p>A short summary of this article goes here in one or two lines.</p>
+          <span class="more">Read more →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 TpT Pro Tools. Not affiliated with TeachersPayTeachers.</span>
+    <span><a href="blog.html">Blog</a> · <a href="about.html">About</a></span>
+  </div>
+</footer>
+
 </body>
 </html>
