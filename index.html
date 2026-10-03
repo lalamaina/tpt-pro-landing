@@ -181,7 +181,7 @@
     </div>
   </section>
 
-  <!-- SECTION 3: LATEST BLOG -->
+  <!-- SECTION 3: LATEST BLOG (fills itself from posts.json: no need to edit this) -->
   <section class="block" id="blog">
     <div class="head-row">
       <div>
@@ -191,35 +191,8 @@
       <a class="btn btn-ghost btn-sm" href="blog.html">All articles →</a>
     </div>
 
-    <!-- TODO: replace with your real latest posts (title, date, summary, link) -->
-    <div class="posts">
-      <a class="post" href="blog.html">
-        <div class="thumb" style="--c1:#0f9d8a;--c2:#9be3d6"></div>
-        <div class="body">
-          <time>Oct 2026</time>
-          <h3>Your latest blog post title</h3>
-          <p>A short summary of your newest article goes here in one or two lines.</p>
-          <span class="more">Read more →</span>
-        </div>
-      </a>
-      <a class="post" href="blog.html">
-        <div class="thumb" style="--c1:#ff6b4a;--c2:#ffc94d"></div>
-        <div class="body">
-          <time>Sep 2026</time>
-          <h3>Previous blog post title</h3>
-          <p>A short summary of your previous article goes here in one or two lines.</p>
-          <span class="more">Read more →</span>
-        </div>
-      </a>
-      <a class="post" href="blog.html">
-        <div class="thumb" style="--c1:#14213d;--c2:#5b6fa8"></div>
-        <div class="body">
-          <time>Sep 2026</time>
-          <h3>Another blog post title</h3>
-          <p>A short summary of this article goes here in one or two lines.</p>
-          <span class="more">Read more →</span>
-        </div>
-      </a>
+    <div class="posts" id="latest-posts">
+      <noscript><p>See all articles on the <a href="blog.html">blog page</a>.</p></noscript>
     </div>
   </section>
 
@@ -231,6 +204,23 @@
     <span><a href="blog.html">Blog</a> · <a href="about.html">About</a></span>
   </div>
 </footer>
+
+<script>
+  // Latest 3 blog posts, read from posts.json
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  fetch('posts.json').then(function(r){return r.json()}).then(function(list){
+    list.sort(function(a,b){return b.date.localeCompare(a.date)});
+    var html=list.slice(0,3).map(function(p){
+      var d=new Date(p.date+'T00:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+      return '<a class="post" href="posts/'+esc(p.slug)+'.html">'+
+        '<div class="thumb" style="--c1:'+esc(p.c1)+';--c2:'+esc(p.c2)+'"></div>'+
+        '<div class="body"><time>'+d+'</time><h3>'+esc(p.title)+'</h3><p>'+esc(p.summary)+'</p><span class="more">Read more →</span></div></a>';
+    }).join('');
+    document.getElementById('latest-posts').innerHTML=html;
+  }).catch(function(){
+    document.getElementById('latest-posts').innerHTML='<p>See all articles on the <a href="blog.html">blog page</a>.</p>';
+  });
+</script>
 
 </body>
 </html>

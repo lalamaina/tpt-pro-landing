@@ -1,0 +1,38 @@
+[
+  {
+    "slug": "stay-on-tpt-or-move",
+    "title": "Should You Move to an Alternative Platform or Stay on TpT?",
+    "date": "2026-10-03",
+    "category": "Industry",
+    "summary": "TpT's new Exclusive Seller membership has sellers asking if it's time to diversify. The facts, what sellers are saying, and the alternatives, side by side.",
+    "c1": "#ff6b4a",
+    "c2": "#ffc94d"
+  },
+  {
+    "slug": "find-profitable-niches",
+    "title": "How to Find Profitable Niches on TpT",
+    "date": "2026-10-02",
+    "category": "Tutorial",
+    "summary": "A simple 4-step process: start broad, look for low competition, validate demand, and analyze the top products.",
+    "c1": "#0f9d8a",
+    "c2": "#9be3d6"
+  },
+  {
+    "slug": "v4-update",
+    "title": "TpT Niche Research Pro v4.0 - What's New",
+    "date": "2026-09-28",
+    "category": "Update",
+    "summary": "Multi-page scraping up to 20 pages, a minimum views filter, clean product titles and license key protection.",
+    "c1": "#14213d",
+    "c2": "#5b6fa8"
+  },
+  {
+    "slug": "how-to-install",
+    "title": "How to Install TpT Pro Tools",
+    "date": "2026-09-25",
+    "category": "Tutorial",
+    "summary": "Install Tampermonkey, create a new script, paste the code, save and activate with your license key. Less than 2 minutes.",
+    "c1": "#ffc94d",
+    "c2": "#ff6b4a"
+  }
+]
