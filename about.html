@@ -18,7 +18,7 @@
   section{padding:34px 0}
   h2.t{font-size:clamp(1.6rem,3.2vw,2.2rem);margin-bottom:10px}
   .sub{color:var(--muted);margin-bottom:22px;max-width:680px}
-  .story{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:40px}
+  .story{max-width:760px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:40px}
   .photo{aspect-ratio:1/1;border-radius:24px;background:linear-gradient(135deg,#d9f3ee,#fff0c2);display:grid;place-items:center;overflow:hidden;border:1px solid var(--line)}
   .photo img{width:100%;height:100%;object-fit:cover}
   .photo .ph{text-align:center;color:var(--teal-d);font-weight:600;padding:16px}
@@ -84,11 +84,6 @@
 
   <section>
     <div class="story">
-      <div class="photo">
-        <!-- TODO: add your photo as images/me.png -->
-        <img src="images/me.png" alt="Photo of the founder of TpT Pro Tools" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-        <div class="ph" style="display:none"><b>👩‍🏫</b>Add your photo<br>images/me.png</div>
-      </div>
       <div>
         <h2 class="t">My story</h2>
         <p>I have been a teacher since 2012. Years in the classroom taught me what students need and what teachers are short of: time, and materials that actually work.</p>
