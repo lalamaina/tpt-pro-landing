@@ -1,72 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - TpT Pro Tools</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About – TpT Pro Tools</title>
+<meta name="description" content="A teacher since 2012, TpT seller and creator of digital resources and tools for TeachersPayTeachers sellers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/blog.css">
+<style>
+  .page{padding:20px 0 0}
+  .hero{padding:56px 0 20px;text-align:center}
+  .hero h1{font-size:clamp(2.1rem,5vw,3.2rem);margin-bottom:12px}
+  .hero h1 em{font-style:normal;color:var(--teal)}
+  .hero p{color:var(--muted);font-size:1.1rem;max-width:620px;margin:0 auto}
+  section{padding:34px 0}
+  h2.t{font-size:clamp(1.6rem,3.2vw,2.2rem);margin-bottom:10px}
+  .sub{color:var(--muted);margin-bottom:22px;max-width:680px}
+  .story{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:40px}
+  .photo{aspect-ratio:1/1;border-radius:24px;background:linear-gradient(135deg,#d9f3ee,#fff0c2);display:grid;place-items:center;overflow:hidden;border:1px solid var(--line)}
+  .photo img{width:100%;height:100%;object-fit:cover}
+  .photo .ph{text-align:center;color:var(--teal-d);font-weight:600;padding:16px}
+  .photo .ph b{display:block;font-size:3rem}
+  .story p{margin-bottom:14px;color:#2a3350}
+  .stats{display:flex;gap:14px;flex-wrap:wrap;margin:18px 0 0}
+  .stat{background:#f3efe6;border-radius:14px;padding:10px 16px;font-size:.92rem}
+  .stat b{display:block;font-family:'Fraunces',serif;font-size:1.3rem}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px}
+  .card .ico{font-size:2rem;margin-bottom:6px}
+  .card h3{font-size:1.2rem;margin-bottom:6px}
+  .card p{color:var(--muted);font-size:.96rem}
+  .btn-row{display:flex;gap:12px;flex-wrap:wrap}
+  .cta{background:var(--ink);color:#fff;border-radius:28px;padding:42px;text-align:center}
+  .cta p{color:#c9d0e0;margin:8px 0 22px}
+  .cta .btn-row{justify-content:center}
+  .cta .btn-ghost{border-color:#fff;color:#fff}.cta .btn-ghost:hover{background:#fff;color:var(--ink)}
+  /* products */
+  .prod{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:40px;margin-bottom:24px}
+  .prod.dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .prod.dark .lead,.prod.dark li{color:#e5e9f4}
+  .prod .lead{color:var(--muted);margin-bottom:16px}
+  .tagp{display:inline-block;font-size:.76rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:12px;background:#d9f3ee;color:var(--teal-d)}
+  .tagp.pro{background:#fff0c2;color:#8a6200}
+  .checks{list-style:none;display:grid;gap:7px;margin-bottom:22px}
+  .checks li{padding-left:26px;position:relative;font-size:.96rem}
+  .checks li::before{content:"✓";position:absolute;left:0;top:3px;width:18px;height:18px;border-radius:50%;background:var(--teal);color:#fff;font-size:.7rem;display:grid;place-items:center}
+  .prod .shot{border-radius:18px;background:linear-gradient(135deg,#d9f3ee,#fff0c2);display:grid;place-items:center;padding:16px;min-height:220px}
+  .prod.dark .shot{background:rgba(255,255,255,.07)}
+  .prod .shot img{max-width:100%;max-height:340px;border-radius:12px;box-shadow:0 14px 34px -18px rgba(0,0,0,.5)}
+  .prod.dark .btn-ghost{border-color:#fff;color:#fff}.prod.dark .btn-ghost:hover{background:#fff;color:var(--ink)}
+  table.cmp{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;font-size:.95rem}
+  .cmp th,.cmp td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line)}
+  .cmp th{background:#f3efe6;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  .cmp tr:last-child td{border-bottom:0}
+  .cmp td:not(:first-child),.cmp th:not(:first-child){text-align:center}
+  @media(max-width:860px){.story,.prod{grid-template-columns:1fr;padding:26px}.cards{grid-template-columns:1fr}.photo{max-width:280px}}
+</style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">📊 TpT Pro Tools</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="https://buy.polar.sh/polar_cl_xD7OwZfzeXDuRXfnZosmnhlgCHnWZipYI1uuI2XSmT1" class="btn-primary">Get Started</a></li>
-            </ul>
-        </div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="index.html"><span>TpT</span> Pro Tools</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html" class="on">About</a></li>
+        <li><a class="btn btn-primary btn-sm" href="extension.html">Free extension</a></li>
+      </ul>
     </nav>
+  </div>
+</header>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>About TpT Pro Tools</h1>
-            <p>Built by a TpT seller, for TpT sellers</p>
-        </div>
-    </section>
+<main class="wrap page">
+  <div class="hero">
+    <h1>Hi, I'm a teacher who <em>builds tools</em></h1>
+    <p>Teaching since 2012, selling on TpT, and creating digital resources and tools for other teacher-sellers.</p>
+  </div>
 
-    <section class="about-content">
-        <div class="container">
-            <div class="about-text">
-                <h2>Our Mission</h2>
-                <p>TpT Pro Tools was created to help TeachersPayTeachers sellers find profitable niches faster and make data-driven decisions. We believe that success on TpT shouldn't require hours of manual research or guesswork.</p>
-                
-                <h2>Why We Built This</h2>
-                <p>As a TpT seller ourselves, we spent countless hours manually searching for niches, counting results, and analyzing competitors. It was tedious, time-consuming, and often inaccurate.</p>
-                <p>So we built the tools we wished existed - professional-grade research tools that give you real data in seconds, not hours.</p>
-                
-                <h2>Our Commitment</h2>
-                <ul>
-                    <li><strong>Lifetime Updates:</strong> Buy once, get all future updates free</li>
-                    <li><strong>Priority Support:</strong> We respond to all support requests within 24 hours</li>
-                    <li><strong>7-Day Guarantee:</strong> Not satisfied? Get a full refund, no questions asked</li>
-                    <li><strong>Privacy First:</strong> We don't collect your data or require login</li>
-                </ul>
-                
-                <h2>Contact Us</h2>
-                <p>Have questions or need help? We'd love to hear from you!</p>
-                <ul class="contact-list">
-                    <li>📧 Email: <a href="mailto:support@tptpro.com">support@tptpro.com</a></li>
-                    <li>🛒 Purchase: <a href="https://buy.polar.sh/polar_cl_xD7OwZfzeXDuRXfnZosmnhlgCHnWZipYI1uuI2XSmT1">Polar.sh Store</a></li>
-                </ul>
-            </div>
+  <section>
+    <div class="story">
+      <div class="photo">
+        <!-- TODO: add your photo as images/me.png -->
+        <img src="images/me.png" alt="Photo of the founder of TpT Pro Tools" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="ph" style="display:none"><b>👩‍🏫</b>Add your photo<br>images/me.png</div>
+      </div>
+      <div>
+        <h2 class="t">My story</h2>
+        <p>I have been a teacher since 2012. Years in the classroom taught me what students need and what teachers are short of: time, and materials that actually work.</p>
+        <p>That is why I started creating digital resources and selling them on TeachersPayTeachers. Running a TpT store is real work. You research niches, watch competitors, plan sales and keep an eye on your numbers.</p>
+        <p>I found myself repeating the same tedious tasks again and again, so I started building small tools to do them for me. Then I shared them with other sellers. That is how TpT Pro Tools began.</p>
+        <div class="stats">
+          <div class="stat"><b>2012</b>teaching since</div>
+          <div class="stat"><b>TpT</b>seller and creator</div>
+          <div class="stat"><b>Digital</b>resources and tools</div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>TpT Pro Tools</h4>
-                    <p>Professional tools for TeachersPayTeachers sellers</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 TpT Pro Tools. Not affiliated with TeachersPayTeachers.</p>
-            </div>
-        </div>
-    </footer>
+  <section>
+    <h2 class="t">What I do</h2>
+    <p class="sub">Three hats, one goal: help teachers spend less time on busywork.</p>
+    <div class="cards">
+      <div class="card"><div class="ico">🍎</div><h3>Teacher</h3><p>I know the classroom from the inside. Every resource and tool starts from a real need.</p></div>
+      <div class="card"><div class="ico">📚</div><h3>Digital resource creator</h3><p>I design digital teaching resources and sell them on TeachersPayTeachers.</p></div>
+      <div class="card"><div class="ico">🧩</div><h3>Tool builder</h3><p>I build browser extensions that save TpT sellers hours of research and repetitive clicking.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="t">Why I build these tools</h2>
+    <p class="sub">I built what I wished I had as a seller.</p>
+    <div class="cards">
+      <div class="card"><div class="ico">⏱️</div><h3>Save time</h3><p>Planning sales, checking earnings and researching keywords should take minutes, not evenings.</p></div>
+      <div class="card"><div class="ico">📊</div><h3>Decide with data</h3><p>Choosing a niche from real numbers beats guessing, especially with so much competition.</p></div>
+      <div class="card"><div class="ico">🤝</div><h3>Made by a seller</h3><p>I use these tools on my own store. When something breaks or could be better, I feel it too.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="t">Contact</h2>
+    <p class="sub">Questions, feedback or ideas for a new tool? I'd love to hear from you. Email <a href="mailto:support@tptpro.com" style="color:var(--teal-d);font-weight:600">support@tptpro.com</a>.</p>
+  </section>
+
+  <div class="cta">
+    <h2>Try the tools</h2>
+    <p>Start with the free extension, or go deeper with the Pro research tool.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="extension.html">Free extension</a>
+      <a class="btn btn-sun" href="pro.html">TpT Niche Research Pro</a>
+      <!-- TODO: add your TpT store link to show your resources -->
+      <a class="btn btn-ghost" href="products.html">All products</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 TpT Pro Tools. Not affiliated with TeachersPayTeachers.</span>
+    <span><a href="index.html">Home</a> · <a href="blog.html">Blog</a> · <a href="about.html">About</a></span>
+  </div>
+</footer>
+
 </body>
 </html>

@@ -1,112 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - TpT Pro Tools</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Products – TpT Pro Tools</title>
+<meta name="description" content="Free TPT Seller Toolkit and TpT Niche Research Pro: browser tools for TeachersPayTeachers sellers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/blog.css">
+<style>
+  .page{padding:20px 0 0}
+  .hero{padding:56px 0 20px;text-align:center}
+  .hero h1{font-size:clamp(2.1rem,5vw,3.2rem);margin-bottom:12px}
+  .hero h1 em{font-style:normal;color:var(--teal)}
+  .hero p{color:var(--muted);font-size:1.1rem;max-width:620px;margin:0 auto}
+  section{padding:34px 0}
+  h2.t{font-size:clamp(1.6rem,3.2vw,2.2rem);margin-bottom:10px}
+  .sub{color:var(--muted);margin-bottom:22px;max-width:680px}
+  .story{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:40px}
+  .photo{aspect-ratio:1/1;border-radius:24px;background:linear-gradient(135deg,#d9f3ee,#fff0c2);display:grid;place-items:center;overflow:hidden;border:1px solid var(--line)}
+  .photo img{width:100%;height:100%;object-fit:cover}
+  .photo .ph{text-align:center;color:var(--teal-d);font-weight:600;padding:16px}
+  .photo .ph b{display:block;font-size:3rem}
+  .story p{margin-bottom:14px;color:#2a3350}
+  .stats{display:flex;gap:14px;flex-wrap:wrap;margin:18px 0 0}
+  .stat{background:#f3efe6;border-radius:14px;padding:10px 16px;font-size:.92rem}
+  .stat b{display:block;font-family:'Fraunces',serif;font-size:1.3rem}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px}
+  .card .ico{font-size:2rem;margin-bottom:6px}
+  .card h3{font-size:1.2rem;margin-bottom:6px}
+  .card p{color:var(--muted);font-size:.96rem}
+  .btn-row{display:flex;gap:12px;flex-wrap:wrap}
+  .cta{background:var(--ink);color:#fff;border-radius:28px;padding:42px;text-align:center}
+  .cta p{color:#c9d0e0;margin:8px 0 22px}
+  .cta .btn-row{justify-content:center}
+  .cta .btn-ghost{border-color:#fff;color:#fff}.cta .btn-ghost:hover{background:#fff;color:var(--ink)}
+  /* products */
+  .prod{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:40px;margin-bottom:24px}
+  .prod.dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .prod.dark .lead,.prod.dark li{color:#e5e9f4}
+  .prod .lead{color:var(--muted);margin-bottom:16px}
+  .tagp{display:inline-block;font-size:.76rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;margin-bottom:12px;background:#d9f3ee;color:var(--teal-d)}
+  .tagp.pro{background:#fff0c2;color:#8a6200}
+  .checks{list-style:none;display:grid;gap:7px;margin-bottom:22px}
+  .checks li{padding-left:26px;position:relative;font-size:.96rem}
+  .checks li::before{content:"✓";position:absolute;left:0;top:3px;width:18px;height:18px;border-radius:50%;background:var(--teal);color:#fff;font-size:.7rem;display:grid;place-items:center}
+  .prod .shot{border-radius:18px;background:linear-gradient(135deg,#d9f3ee,#fff0c2);display:grid;place-items:center;padding:16px;min-height:220px}
+  .prod.dark .shot{background:rgba(255,255,255,.07)}
+  .prod .shot img{max-width:100%;max-height:340px;border-radius:12px;box-shadow:0 14px 34px -18px rgba(0,0,0,.5)}
+  .prod.dark .btn-ghost{border-color:#fff;color:#fff}.prod.dark .btn-ghost:hover{background:#fff;color:var(--ink)}
+  table.cmp{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;font-size:.95rem}
+  .cmp th,.cmp td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line)}
+  .cmp th{background:#f3efe6;font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+  .cmp tr:last-child td{border-bottom:0}
+  .cmp td:not(:first-child),.cmp th:not(:first-child){text-align:center}
+  @media(max-width:860px){.story,.prod{grid-template-columns:1fr;padding:26px}.cards{grid-template-columns:1fr}.photo{max-width:280px}}
+</style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">📊 TpT Pro Tools</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html" class="active">Products</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="https://buy.polar.sh/polar_cl_xD7OwZfzeXDuRXfnZosmnhlgCHnWZipYI1uuI2XSmT1" class="btn-primary">Get Started</a></li>
-            </ul>
-        </div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="logo" href="index.html"><span>TpT</span> Pro Tools</a>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" class="on">Products</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a class="btn btn-primary btn-sm" href="extension.html">Free extension</a></li>
+      </ul>
     </nav>
+  </div>
+</header>
 
-    <section class="page-header">
-        <div class="container">
-            <h1>Our Products</h1>
-            <p>Professional browser tools to help you succeed on TeachersPayTeachers</p>
+<main class="wrap page">
+  <div class="hero">
+    <h1>Tools for <em>TpT sellers</em></h1>
+    <p>Two browser extensions, built by a seller. Start free, upgrade when you want deeper research.</p>
+  </div>
+
+  <section>
+    <div class="prod">
+      <div>
+        <span class="tagp">Free</span>
+        <h2 class="t">TPT Seller Toolkit</h2>
+        <p class="lead">Celebrate every sale, see your earnings at a glance, and plan 2 months of Throw a Sale sales in a few clicks.</p>
+        <ul class="checks">
+          <li>Notification and sound for every sale</li>
+          <li>Earnings for the day, week and month</li>
+          <li>Create back-to-back Throw a Sale sales</li>
+          <li>Add new products to existing sales</li>
+        </ul>
+        <div class="btn-row">
+          <!-- TODO: replace # with your Chrome Web Store link -->
+          <a class="btn btn-primary" href="#" target="_blank" rel="noopener">⬇ Install from Chrome Store</a>
+          <a class="btn btn-ghost" href="extension.html" style="color:var(--ink)">More details</a>
         </div>
-    </section>
+      </div>
+      <div class="shot"><img src="images/my-sales.png" alt="TPT Seller Toolkit showing earnings" onerror="this.style.display='none'"></div>
+    </div>
 
-    <section class="products-full">
-        <div class="container">
-            <!-- Product 1 -->
-            <div class="product-detail" id="niche-pro">
-                <div class="product-info">
-                    <div class="product-badge">Best Seller</div>
-                    <h2>TpT Niche Research Pro</h2>
-                    <div class="price">$29 <span class="price-note">One-time payment</span></div>
-                    <p class="product-description">The ultimate keyword research and product scraping tool for TpT sellers. Find low-competition niches, analyze competitors, and export data to CSV.</p>
-                    
-                    <h3>Key Features:</h3>
-                    <ul class="feature-list">
-                        <li>✓ Real-time keyword search with competition analysis</li>
-                        <li>✓ Deep A-Z keyword sweep for hidden opportunities</li>
-                        <li>✓ Multi-page product scraper with CSV export</li>
-                        <li>✓ Inline product badges showing publish dates, views, and bundle status</li>
-                        <li>✓ Filter products by minimum views</li>
-                        <li>✓ Clean title extraction from product URLs</li>
-                        <li>✓ License key protection (one browser per license)</li>
-                        <li>✓ Lifetime updates included</li>
-                    </ul>
-                    
-                    <div class="product-actions">
-                        <a href="https://buy.polar.sh/polar_cl_xD7OwZfzeXDuRXfnZosmnhlgCHnWZipYI1uuI2XSmT1" class="btn-primary">Purchase Now - $29</a>
-                        <a href="blog.html#how-to-install" class="btn-secondary">Installation Guide</a>
-                    </div>
-                </div>
-                <div class="product-screenshot">
-                    <div class="screenshot-placeholder">
-                        <p>📸 Add screenshot here</p>
-                        <p class="screenshot-note">Replace this with actual product screenshot</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 2 (Coming Soon) -->
-            <div class="product-detail coming-soon">
-                <div class="product-info">
-                    <div class="product-badge coming-soon-badge">Coming Soon</div>
-                    <h2>TpT Analytics Dashboard</h2>
-                    <div class="price">TBD</div>
-                    <p class="product-description">Advanced analytics and reporting tool for TpT sellers. Track your sales, monitor competitor performance, and get AI-powered recommendations.</p>
-                    
-                    <h3>Planned Features:</h3>
-                    <ul class="feature-list">
-                        <li>✓ Sales tracking and analytics</li>
-                        <li>✓ Competitor monitoring</li>
-                        <li>✓ AI-powered niche recommendations</li>
-                        <li>✓ Revenue forecasting</li>
-                        <li>✓ Automated reports</li>
-                    </ul>
-                    
-                    <div class="product-actions">
-                        <span class="btn-disabled">Coming Soon</span>
-                    </div>
-                </div>
-            </div>
+    <div class="prod dark">
+      <div>
+        <span class="tagp pro">Pro</span>
+        <h2 class="t">TpT Niche Research Pro</h2>
+        <p class="lead">Keyword and competitor research that works right on TeachersPayTeachers.</p>
+        <ul class="checks">
+          <li>Keyword Search with results counts and High / Med / Low competition</li>
+          <li>Deep Search for long-tail keyword ideas</li>
+          <li>Multi-Page Scraper with CSV export</li>
+          <li>Publish date and view badges on TpT results</li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn btn-sun" href="https://buy.polar.sh/polar_cl_UAXHR11qjlCEsdUZf7W7fAFBD4QvfcWa7340l36kNuJ" target="_blank" rel="noopener">Buy now</a>
+          <a class="btn btn-ghost" href="pro.html">More details</a>
         </div>
-    </section>
+      </div>
+      <div class="shot"><img src="images/paid-keywords.png" alt="TpT Niche Research Pro keyword results" onerror="this.style.display='none'"></div>
+    </div>
+  </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>TpT Pro Tools</h4>
-                    <p>Professional tools for TeachersPayTeachers sellers</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="about.html">About</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 TpT Pro Tools. Not affiliated with TeachersPayTeachers.</p>
-            </div>
-        </div>
-    </footer>
+  <section>
+    <h2 class="t">Free vs Pro</h2>
+    <p class="sub">They do different jobs, so many sellers use both.</p>
+    <table class="cmp">
+      <thead><tr><th></th><th>Seller Toolkit (free)</th><th>Niche Research Pro</th></tr></thead>
+      <tbody>
+        <tr><td>Sale notifications and earnings</td><td>✓</td><td>–</td></tr>
+        <tr><td>Plan Throw a Sale sales</td><td>✓</td><td>–</td></tr>
+        <tr><td>Keyword search and competition</td><td>–</td><td>✓</td></tr>
+        <tr><td>Deep Search (long-tail keywords)</td><td>–</td><td>✓</td></tr>
+        <tr><td>Multi-page scraper and CSV export</td><td>–</td><td>✓</td></tr>
+        <tr><td>Badges on TpT search results</td><td>–</td><td>✓</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="cta">
+    <h2>Not sure where to start?</h2>
+    <p>Install the free toolkit first. Read the blog for tips on finding profitable niches.</p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="extension.html">Free extension</a>
+      <a class="btn btn-ghost" href="blog.html">Read the blog</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 TpT Pro Tools. Not affiliated with TeachersPayTeachers.</span>
+    <span><a href="index.html">Home</a> · <a href="blog.html">Blog</a> · <a href="about.html">About</a></span>
+  </div>
+</footer>
+
 </body>
 </html>
