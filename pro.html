@@ -70,8 +70,20 @@
   .cta p{color:#c9d0e0;margin:8px 0 22px}
   footer{margin-top:50px;border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.9rem}
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
-  @media(max-width:760px){.grid4{grid-template-columns:1fr}.tool{padding:22px}nav ul li:not(:last-child){display:none}}
+  @media(max-width:760px){.grid4{grid-template-columns:1fr}.tool{padding:22px}}
 </style>
+<!-- seo -->
+<link rel="canonical" href="https://laliana.online/pro.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TpT Pro Tools">
+<meta property="og:title" content="TpT Niche Research Pro – Keyword &amp; Competitor Research for TpT Sellers">
+<meta property="og:description" content="TpT Niche Research Pro: keyword search with competition levels, deep A–Z search, multi-page product scraper with CSV export, and inline badges on TeachersPayTeachers results.">
+<meta property="og:url" content="https://laliana.online/pro.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TpT Niche Research Pro – Keyword &amp; Competitor Research for TpT Sellers">
+<meta name="twitter:description" content="TpT Niche Research Pro: keyword search with competition levels, deep A–Z search, multi-page product scraper with CSV export, and inline badges on TeachersPayTeachers results.">
+<!-- /seo -->
+<link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
 
@@ -86,6 +98,7 @@
         <li><a href="about.html">About</a></li>
         <li><a class="btn btn-sun btn-sm" href="https://buy.polar.sh/polar_cl_UAXHR11qjlCEsdUZf7W7fAFBD4QvfcWa7340l36kNuJ" target="_blank" rel="noopener">Buy now</a></li>
       </ul>
+      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false">☰</button>
     </nav>
   </div>
 </header>
@@ -254,9 +267,12 @@
 <footer>
   <div class="wrap">
     <span>© 2026 TpT Pro Tools. Not affiliated with TeachersPayTeachers.</span>
-    <span><a href="index.html">Home</a> · <a href="blog.html">Blog</a> · <a href="about.html">About</a></span>
+    <span><a href="index.html">Home</a> · <a href="blog.html">Blog</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="contact.html">Contact</a></span>
   </div>
 </footer>
 
+<!-- menu-js -->
+<script>(function(){var b=document.querySelector('.menu-btn'),u=document.querySelector('header nav ul');if(!b||!u)return;function c(){u.classList.remove('open');b.setAttribute('aria-expanded','false');b.textContent='\u2630'}b.addEventListener('click',function(){var o=u.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');b.textContent=o?'\u2715':'\u2630'});u.addEventListener('click',function(e){if(e.target.closest('a'))c()})})();</script>
+<!-- /menu-js -->
 </body>
 </html>

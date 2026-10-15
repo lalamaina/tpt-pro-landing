@@ -58,6 +58,18 @@
   .cmp td:not(:first-child),.cmp th:not(:first-child){text-align:center}
   @media(max-width:860px){.story,.prod{grid-template-columns:1fr;padding:26px}.cards{grid-template-columns:1fr}.photo{max-width:280px}}
 </style>
+<!-- seo -->
+<link rel="canonical" href="https://laliana.online/products.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TpT Pro Tools">
+<meta property="og:title" content="Products – TpT Pro Tools">
+<meta property="og:description" content="Free TPT Seller Toolkit and TpT Niche Research Pro: browser tools for TeachersPayTeachers sellers.">
+<meta property="og:url" content="https://laliana.online/products.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Products – TpT Pro Tools">
+<meta name="twitter:description" content="Free TPT Seller Toolkit and TpT Niche Research Pro: browser tools for TeachersPayTeachers sellers.">
+<!-- /seo -->
+<link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
 
@@ -70,8 +82,9 @@
         <li><a href="products.html" class="on">Products</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a class="btn btn-primary btn-sm" href="extension.html">Free extension</a></li>
+        <li><a class="btn btn-primary btn-sm" href="https://buy.polar.sh/polar_cl_UAXHR11qjlCEsdUZf7W7fAFBD4QvfcWa7340l36kNuJ" target="_blank" rel="noopener">Buy now</a></li>
       </ul>
+      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false">☰</button>
     </nav>
   </div>
 </header>
@@ -79,10 +92,29 @@
 <main class="wrap page">
   <div class="hero">
     <h1>Tools for <em>TpT sellers</em></h1>
-    <p>Two browser extensions, built by a seller. Start free, upgrade when you want deeper research.</p>
+    <p>Two browser extensions, built by a seller: deeper keyword research with Pro, and a free toolkit for your sales.</p>
   </div>
 
   <section>
+    <div class="prod dark">
+      <div>
+        <span class="tagp pro">Pro</span>
+        <h2 class="t">TpT Niche Research Pro</h2>
+        <p class="lead">Keyword and competitor research that works right on TeachersPayTeachers.</p>
+        <ul class="checks">
+          <li>Keyword Search with results counts and High / Med / Low competition</li>
+          <li>Deep Search for long-tail keyword ideas</li>
+          <li>Multi-Page Scraper with CSV export</li>
+          <li>Publish date and view badges on TpT results</li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn btn-sun" href="https://buy.polar.sh/polar_cl_UAXHR11qjlCEsdUZf7W7fAFBD4QvfcWa7340l36kNuJ" target="_blank" rel="noopener">Buy now</a>
+          <a class="btn btn-ghost" href="pro.html">More details</a>
+        </div>
+      </div>
+      <div class="shot"><img src="images/paid-keywords.png" alt="TpT Niche Research Pro keyword results" onerror="this.style.display='none'"></div>
+    </div>
+
     <div class="prod">
       <div>
         <span class="tagp">Free</span>
@@ -101,25 +133,6 @@
         </div>
       </div>
       <div class="shot"><img src="images/my-sales.png" alt="TPT Seller Toolkit showing earnings" onerror="this.style.display='none'"></div>
-    </div>
-
-    <div class="prod dark">
-      <div>
-        <span class="tagp pro">Pro</span>
-        <h2 class="t">TpT Niche Research Pro</h2>
-        <p class="lead">Keyword and competitor research that works right on TeachersPayTeachers.</p>
-        <ul class="checks">
-          <li>Keyword Search with results counts and High / Med / Low competition</li>
-          <li>Deep Search for long-tail keyword ideas</li>
-          <li>Multi-Page Scraper with CSV export</li>
-          <li>Publish date and view badges on TpT results</li>
-        </ul>
-        <div class="btn-row">
-          <a class="btn btn-sun" href="https://buy.polar.sh/polar_cl_UAXHR11qjlCEsdUZf7W7fAFBD4QvfcWa7340l36kNuJ" target="_blank" rel="noopener">Buy now</a>
-          <a class="btn btn-ghost" href="pro.html">More details</a>
-        </div>
-      </div>
-      <div class="shot"><img src="images/paid-keywords.png" alt="TpT Niche Research Pro keyword results" onerror="this.style.display='none'"></div>
     </div>
   </section>
 
@@ -152,9 +165,12 @@
 <footer>
   <div class="wrap">
     <span>© 2026 TpT Pro Tools. Not affiliated with TeachersPayTeachers.</span>
-    <span><a href="index.html">Home</a> · <a href="blog.html">Blog</a> · <a href="about.html">About</a></span>
+    <span><a href="index.html">Home</a> · <a href="blog.html">Blog</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="contact.html">Contact</a></span>
   </div>
 </footer>
 
+<!-- menu-js -->
+<script>(function(){var b=document.querySelector('.menu-btn'),u=document.querySelector('header nav ul');if(!b||!u)return;function c(){u.classList.remove('open');b.setAttribute('aria-expanded','false');b.textContent='\u2630'}b.addEventListener('click',function(){var o=u.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');b.textContent=o?'\u2715':'\u2630'});u.addEventListener('click',function(e){if(e.target.closest('a'))c()})})();</script>
+<!-- /menu-js -->
 </body>
 </html>

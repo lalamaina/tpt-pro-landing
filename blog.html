@@ -9,6 +9,18 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/blog.css">
+<!-- seo -->
+<link rel="canonical" href="https://laliana.online/blog.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TpT Pro Tools">
+<meta property="og:title" content="Blog – TpT Pro Tools">
+<meta property="og:description" content="Tips, tutorials and news for TeachersPayTeachers sellers.">
+<meta property="og:url" content="https://laliana.online/blog.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Blog – TpT Pro Tools">
+<meta name="twitter:description" content="Tips, tutorials and news for TeachersPayTeachers sellers.">
+<!-- /seo -->
+<link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
 
@@ -21,8 +33,9 @@
         <li><a href="products.html">Products</a></li>
         <li><a href="blog.html" class="on">Blog</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a class="btn btn-primary btn-sm" href="extension.html">Free extension</a></li>
+        <li><a class="btn btn-primary btn-sm" href="https://buy.polar.sh/polar_cl_UAXHR11qjlCEsdUZf7W7fAFBD4QvfcWa7340l36kNuJ" target="_blank" rel="noopener">Buy now</a></li>
       </ul>
+      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false">☰</button>
     </nav>
   </div>
 </header>
@@ -41,7 +54,7 @@
 <footer>
   <div class="wrap">
     <span>© 2026 TpT Pro Tools. Not affiliated with TeachersPayTeachers.</span>
-    <span><a href="index.html">Home</a> · <a href="blog.html">Blog</a> · <a href="about.html">About</a></span>
+    <span><a href="index.html">Home</a> · <a href="blog.html">Blog</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="contact.html">Contact</a></span>
   </div>
 </footer>
 
@@ -62,5 +75,8 @@
   });
 </script>
 
+<!-- menu-js -->
+<script>(function(){var b=document.querySelector('.menu-btn'),u=document.querySelector('header nav ul');if(!b||!u)return;function c(){u.classList.remove('open');b.setAttribute('aria-expanded','false');b.textContent='\u2630'}b.addEventListener('click',function(){var o=u.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');b.textContent=o?'\u2715':'\u2630'});u.addEventListener('click',function(e){if(e.target.closest('a'))c()})})();</script>
+<!-- /menu-js -->
 </body>
 </html>

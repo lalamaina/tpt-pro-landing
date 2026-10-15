@@ -72,8 +72,20 @@
   .cta p{color:#c9d0e0;margin:8px 0 22px}
   footer{margin-top:50px;border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:.9rem}
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
-  @media(max-width:760px){.two{grid-template-columns:1fr}.tool{padding:22px}nav ul li:not(:last-child){display:none}}
+  @media(max-width:760px){.two{grid-template-columns:1fr}.tool{padding:22px}}
 </style>
+<!-- seo -->
+<link rel="canonical" href="https://laliana.online/extension.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TpT Pro Tools">
+<meta property="og:title" content="TPT Seller Toolkit – Free Chrome Extension for TpT Sellers">
+<meta property="og:description" content="TPT Seller Toolkit: get notified of every TpT sale, see your daily/weekly/monthly earnings, and plan 2 months of Throw a Sale sales in a few clicks.">
+<meta property="og:url" content="https://laliana.online/extension.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TPT Seller Toolkit – Free Chrome Extension for TpT Sellers">
+<meta name="twitter:description" content="TPT Seller Toolkit: get notified of every TpT sale, see your daily/weekly/monthly earnings, and plan 2 months of Throw a Sale sales in a few clicks.">
+<!-- /seo -->
+<link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
 
@@ -88,6 +100,7 @@
         <li><a href="about.html">About</a></li>
         <li><a class="btn btn-primary btn-sm" href="#install">Install free</a></li>
       </ul>
+      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false">☰</button>
     </nav>
   </div>
 </header>
@@ -170,7 +183,7 @@
         <li><b>Refresh or open your reports</b><span>Press the ↻ button to update the numbers, or "My Sales" to jump to your TpT sales page.</span></li>
       </ol>
       <figure>
-        <img src="images/my-sales.png" alt="My sales tab showing day, week and month earnings" onerror="this.style.display='none'">
+        <img src="images/my-sales.PNG" alt="My sales tab showing day, week and month earnings" onerror="this.style.display='none'">
         <figcaption>The "My sales" tab: day, week and month earnings at a glance.</figcaption>
       </figure>
     </div>
@@ -191,8 +204,8 @@
       </ol>
       <figure>
         <div class="grid">
-          <img src="images/plan-pick-discount.png" alt="Plan sales tab asking to pick a discount" onerror="this.style.display='none'">
-          <img src="images/plan-ready.png" alt="Plan sales tab with 16 sales ready to create" onerror="this.style.display='none'">
+          <img src="images/plan-pick-discount.PNG" alt="Plan sales tab asking to pick a discount" onerror="this.style.display='none'">
+          <img src="images/plan-ready.PNG" alt="Plan sales tab with 16 sales ready to create" onerror="this.style.display='none'">
         </div>
         <figcaption>Pick a discount for each sale (or set all at once), then press "Create sales".</figcaption>
       </figure>
@@ -212,7 +225,7 @@
         <li><b>Press the button</b><span>Nothing opens on TpT until you press it. The extension then opens each selected sale, adds all your products, and saves it.</span></li>
       </ol>
       <figure>
-        <img src="images/update-existing.png" alt="Add all products to existing sales list" onerror="this.style.display='none'">
+        <img src="images/update-existing.PNG" alt="Add all products to existing sales list" onerror="this.style.display='none'">
         <figcaption>Tick the sales that should get your new products.</figcaption>
       </figure>
     </div>
@@ -256,9 +269,12 @@
 <footer>
   <div class="wrap">
     <span>© 2026 TpT Pro Tools. Not affiliated with TeachersPayTeachers.</span>
-    <span><a href="index.html">Home</a> · <a href="blog.html">Blog</a> · <a href="about.html">About</a></span>
+    <span><a href="index.html">Home</a> · <a href="blog.html">Blog</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="contact.html">Contact</a></span>
   </div>
 </footer>
 
+<!-- menu-js -->
+<script>(function(){var b=document.querySelector('.menu-btn'),u=document.querySelector('header nav ul');if(!b||!u)return;function c(){u.classList.remove('open');b.setAttribute('aria-expanded','false');b.textContent='\u2630'}b.addEventListener('click',function(){var o=u.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');b.textContent=o?'\u2715':'\u2630'});u.addEventListener('click',function(e){if(e.target.closest('a'))c()})})();</script>
+<!-- /menu-js -->
 </body>
 </html>

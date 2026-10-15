@@ -99,12 +99,25 @@
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
   @media(max-width:860px){
-    nav ul li:not(:last-child){display:none}
+    
     .feature,.paid{grid-template-columns:1fr;padding:28px}
     .posts{grid-template-columns:1fr}
     .hero{padding-top:48px}
   }
 </style>
+<!-- seo -->
+<link rel="canonical" href="https://laliana.online/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TpT Pro Tools">
+<meta property="og:title" content="TpT Pro Tools – Free Tools &amp; Tips for TeachersPayTeachers Sellers">
+<meta property="og:description" content="Free browser extension, pro tools and practical tips to help TeachersPayTeachers sellers find niches, analyze competitors and grow sales.">
+<meta property="og:url" content="https://laliana.online/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TpT Pro Tools – Free Tools &amp; Tips for TeachersPayTeachers Sellers">
+<meta name="twitter:description" content="Free browser extension, pro tools and practical tips to help TeachersPayTeachers sellers find niches, analyze competitors and grow sales.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "TpT Pro Tools", "url": "https://laliana.online/"}</script>
+<!-- /seo -->
+<link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
 
@@ -117,8 +130,9 @@
         <li><a href="products.html">Products</a></li>
         <li><a href="blog.html">Blog</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a class="btn btn-primary btn-sm" href="#free">Get the free tool</a></li>
+        <li><a class="btn btn-primary btn-sm" href="https://buy.polar.sh/polar_cl_UAXHR11qjlCEsdUZf7W7fAFBD4QvfcWa7340l36kNuJ" target="_blank" rel="noopener">Buy now</a></li>
       </ul>
+      <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false">☰</button>
     </nav>
   </div>
 </header>
@@ -126,11 +140,36 @@
 <main class="wrap">
 
   <div class="hero">
-    <h1>Free tools & smart tips for <em>TpT sellers</em></h1>
+    <h1>Smart tools & tips for <em>TpT sellers</em></h1>
     <p>Find profitable niches, study your competitors and grow your TeachersPayTeachers store with simple browser tools and practical guides.</p>
   </div>
 
-  <!-- SECTION 1: FREE EXTENSION -->
+  <!-- SECTION 1: PAID EXTENSION (main product) -->
+  <section class="block" id="pro">
+    <div class="feature">
+      <div>
+        <span class="tag soon">Pro extension</span>
+        <h2>TpT Niche Research Pro</h2>
+        <p class="lead">Keyword and competitor research that works right on TeachersPayTeachers. See how many results and how much competition any keyword has, then find the niches worth your time.</p>
+        <ul class="checks">
+          <li>Keyword Search with results counts and High / Med / Low competition</li>
+          <li>Deep Search: a long list of keyword ideas in one go</li>
+          <li>Multi-Page Scraper: top products by views, exported to CSV</li>
+          <li>Publish date and view badges right on TpT search results</li>
+        </ul>
+        <div class="btn-row">
+          <a class="btn btn-sun" href="https://buy.polar.sh/polar_cl_UAXHR11qjlCEsdUZf7W7fAFBD4QvfcWa7340l36kNuJ" target="_blank" rel="noopener">Buy now</a>
+          <a class="btn btn-ghost" href="pro.html">More details</a>
+        </div>
+      </div>
+      <div class="shot">
+        <img src="images/paid-keywords.png" alt="TpT Niche Research Pro keyword search results" style="object-fit:contain;padding:18px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="ph" style="display:none"><b>📊</b>Add images/paid-keywords.png</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: FREE EXTENSION -->
   <section class="block" id="free">
     <div class="feature">
       <div>
@@ -156,31 +195,6 @@
     </div>
   </section>
 
-  <!-- SECTION 2: PAID EXTENSION -->
-  <section class="block" id="pro">
-    <div class="feature">
-      <div>
-        <span class="tag soon">Pro extension</span>
-        <h2>TpT Niche Research Pro</h2>
-        <p class="lead">Keyword and competitor research that works right on TeachersPayTeachers. See how many results and how much competition any keyword has, then find the niches worth your time.</p>
-        <ul class="checks">
-          <li>Keyword Search with results counts and High / Med / Low competition</li>
-          <li>Deep Search: a long list of keyword ideas in one go</li>
-          <li>Multi-Page Scraper: top products by views, exported to CSV</li>
-          <li>Publish date and view badges right on TpT search results</li>
-        </ul>
-        <div class="btn-row">
-          <a class="btn btn-sun" href="https://buy.polar.sh/polar_cl_UAXHR11qjlCEsdUZf7W7fAFBD4QvfcWa7340l36kNuJ" target="_blank" rel="noopener">Buy now</a>
-          <a class="btn btn-ghost" href="pro.html">More details</a>
-        </div>
-      </div>
-      <div class="shot">
-        <img src="images/paid-keywords.png" alt="TpT Niche Research Pro keyword search results" style="object-fit:contain;padding:18px" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-        <div class="ph" style="display:none"><b>📊</b>Add images/paid-keywords.png</div>
-      </div>
-    </div>
-  </section>
-
   <!-- SECTION 3: LATEST BLOG (fills itself from posts.json: no need to edit this) -->
   <section class="block" id="blog">
     <div class="head-row">
@@ -201,7 +215,7 @@
 <footer>
   <div class="wrap">
     <span>© 2026 TpT Pro Tools. Not affiliated with TeachersPayTeachers.</span>
-    <span><a href="blog.html">Blog</a> · <a href="about.html">About</a></span>
+    <span><a href="blog.html">Blog</a> · <a href="about.html">About</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="contact.html">Contact</a></span>
   </div>
 </footer>
 
@@ -222,5 +236,8 @@
   });
 </script>
 
+<!-- menu-js -->
+<script>(function(){var b=document.querySelector('.menu-btn'),u=document.querySelector('header nav ul');if(!b||!u)return;function c(){u.classList.remove('open');b.setAttribute('aria-expanded','false');b.textContent='\u2630'}b.addEventListener('click',function(){var o=u.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');b.textContent=o?'\u2715':'\u2630'});u.addEventListener('click',function(e){if(e.target.closest('a'))c()})})();</script>
+<!-- /menu-js -->
 </body>
 </html>
